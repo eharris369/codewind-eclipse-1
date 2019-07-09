@@ -94,6 +94,10 @@
 				</or>
 			</enablement>
 			<actionProvider
+				id="org.eclipse.codewind.ui.rootActionProvider"
+				class="org.eclipse.codewind.ui.internal.actions.RootActionProvider">
+			</actionProvider>
+			<actionProvider
 				id="org.eclipse.codewind.ui.codewindActionProvider"
 				class="org.eclipse.codewind.ui.internal.actions.CodewindActionProvider">
 				<enablement>

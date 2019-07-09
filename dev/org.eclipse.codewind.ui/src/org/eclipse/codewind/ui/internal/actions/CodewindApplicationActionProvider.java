@@ -32,6 +32,7 @@ public class CodewindApplicationActionProvider extends CommonActionProvider {
 	private OpenPerfMonitorAction openPerfMonitorAction;
 	private UnbindProjectAction unbindProjectAction;
 	private OpenAppDoubleClickAction openAppDoubleClickAction;
+	private TestAction testAction;
 	
     @Override
     public void init(ICommonActionExtensionSite aSite) {
@@ -43,6 +44,7 @@ public class CodewindApplicationActionProvider extends CommonActionProvider {
         openPerfMonitorAction = new OpenPerfMonitorAction(selProvider);
         unbindProjectAction = new UnbindProjectAction(selProvider);
         openAppDoubleClickAction = new OpenAppDoubleClickAction(selProvider);
+        testAction = new TestAction(selProvider);
     }
     
     @Override
@@ -60,6 +62,7 @@ public class CodewindApplicationActionProvider extends CommonActionProvider {
     		menu.appendToGroup(ICommonMenuConstants.GROUP_OPEN, openPerfMonitorAction);
     	}
     	menu.appendToGroup(ICommonMenuConstants.GROUP_ADDITIONS, unbindProjectAction);
+    	menu.appendToGroup(ICommonMenuConstants.GROUP_GENERATE, testAction);
     	
     }
 
