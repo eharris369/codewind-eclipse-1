@@ -185,9 +185,7 @@ public class CodewindConnection {
 		}
 
 		try {
-			float version = Float.parseFloat(versionStr);
-			float expectedVersion = Float.parseFloat(InstallUtil.DEFAULT_INSTALL_VERSION);
-			return version >= expectedVersion;
+			return InstallUtil.DEFAULT_INSTALL_VERSION.equals(versionStr);
 		}
 		catch(NumberFormatException e) {
 			Logger.logError("Couldn't parse version number from " + versionStr); //$NON-NLS-1$
