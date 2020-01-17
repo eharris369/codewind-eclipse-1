@@ -256,9 +256,11 @@ public class ProjectTypeSelectionPage extends WizardPage {
 	
 	public void setProjectInfo(ProjectInfo projectInfo) {
 		this.projectInfo = projectInfo;
-		projectTypeInfo = typeMap.get(projectInfo.type.getId());
-		projectSubtypeInfo = projectTypeInfo.new ProjectSubtypeInfo(projectInfo.language.getId());
-		updateTables(true);
+		if (typeMap != null) {
+			projectTypeInfo = typeMap.get(projectInfo.type.getId());
+			projectSubtypeInfo = projectTypeInfo.new ProjectSubtypeInfo(projectInfo.language.getId());
+			updateTables(true);
+		}
 	}
 
 	public void initTypeMap() {
