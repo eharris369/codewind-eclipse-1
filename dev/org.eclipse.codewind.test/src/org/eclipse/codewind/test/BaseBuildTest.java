@@ -45,8 +45,12 @@ public abstract class BaseBuildTest extends BaseTest {
     	refreshProject();
     	// Check that build is started automatically
     	CodewindApplication app = connection.getAppByName(projectName);
-    	CodewindUtil.waitForBuildState(app, BuildStatus.IN_PROGRESS, 30, 1);
-    	assertTrue("Build should be successful", CodewindUtil.waitForBuildState(app, BuildStatus.SUCCESS, 300, 1));
+    	if (!APPSODY_PROJECT_TYPE.equals(projectType)) {
+    		CodewindUtil.waitForBuildState(app, BuildStatus.IN_PROGRESS, 30, 1);
+    		assertTrue("Build should be successful", CodewindUtil.waitForBuildState(app, BuildStatus.SUCCESS, 300, 1));
+    	} else {
+    		CodewindUtil.waitForAppState(app, AppStatus.STARTING, 30, 1);
+    	}
     	assertTrue("App should be in started state", CodewindUtil.waitForAppState(app, AppStatus.STARTED, 120, 1));
     	// Check for the new text
     	pingApp(text2);

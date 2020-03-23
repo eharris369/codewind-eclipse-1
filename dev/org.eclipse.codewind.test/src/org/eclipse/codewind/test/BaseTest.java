@@ -76,6 +76,7 @@ public abstract class BaseTest extends TestCase {
 	protected static final String APPSODY_JAVA_MICROPROFILE_ID = "java-microprofile.*default";
 	protected static final String APPSODY_NODE_EXPRESS_ID = "nodejs-express.*simple";
 	protected static final String APPSODY_JAVA_SPRING_ID = "spring-boot2.*default";
+	protected static final String APPSODY_LIBERTY_ID = "java-openliberty.*default";
 
 	protected static final String MARKER_TYPE = "org.eclipse.codewind.core.validationMarker";
 	
