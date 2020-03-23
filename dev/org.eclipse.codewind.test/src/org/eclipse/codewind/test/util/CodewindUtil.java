@@ -51,6 +51,10 @@ public class CodewindUtil {
 	}
 	
 	public static void cleanup(CodewindConnection connection) throws Exception {
+		if (connection == null) {
+			return;
+		}
+		
 		// Remove projects
 		List<CodewindApplication> apps = connection.getApps();
 		for (CodewindApplication app: apps) {
